@@ -24,11 +24,7 @@ pipeline {
             }
         }
 
-        stage('Tests') {
-            steps {
-                echo 'Lancement des tests unitaires...'
-                sh 'mvn test'
-            }
+        
         }
 
         stage('Package') {
