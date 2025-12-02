@@ -1,11 +1,11 @@
+# Dockerfile
 FROM eclipse-temurin:17-jdk-jammy
 
 WORKDIR /app
 
-# On copie le JAR correct (pas le .original)
-COPY --from=builder /app/target/*.jar app.jar
+# Copier le JAR depuis votre machine
+COPY target/*.jar app.jar
 
-# Ton Spring Boot écoute sur 8089
 EXPOSE 8089
 
 ENTRYPOINT ["java", "-jar", "app.jar"]
