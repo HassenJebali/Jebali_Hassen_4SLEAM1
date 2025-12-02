@@ -1,10 +1,9 @@
-# Dockerfile
 FROM eclipse-temurin:17-jdk-jammy
 
 WORKDIR /app
 
-# Copier le JAR depuis votre machine
-COPY target/*.jar app.jar
+# Copier le JAR depuis le target local
+COPY target/student-management-0.0.1-SNAPSHOT.jar app.jar
 
 EXPOSE 8089
 
