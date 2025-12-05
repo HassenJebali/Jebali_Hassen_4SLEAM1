@@ -201,7 +201,7 @@ docker push <image>:latest
 - 1. **Checkout** : Récupération du code depuis GitHub et Déclenchement automatique à chaque commit .
 - 2. **Test** : Exécution des tests unitaires et Arrêt du pipeline si erreur.
 - 3. **Package** : Génération du **`.jar`** via**` mvn clean package**`**.
-- 4. **Build Docker Image **: Construction de l’image Docker et Création des tags **`(build-<BUILD_NUMBER>*`**, **`latest`**.
+- 4. **Build Docker Image ** : Construction de l’image Docker et Création des tags **`(build-<BUILD_NUMBER>*`**, **`latest`**.
 - 5. **Push to Docker Hub** : Authentification sécurisée et Push automatique.
 - 6. **Post-actions** : Logout Docker, Archivage du **`.jar`**  et Logs détaillés
 
