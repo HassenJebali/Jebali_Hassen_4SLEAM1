@@ -1,0 +1,37 @@
+<h2>Gestion des Inscriptions</h2>
+
+<div *ngIf="errorMessage" style="color:red">{{ errorMessage }}</div>
+
+<!-- Formulaire création / mise à jour -->
+<div>
+  <input type="text" placeholder="Nom étudiant" [(ngModel)]="selectedEnrollment.studentName">
+  <input type="text" placeholder="Nom cours" [(ngModel)]="selectedEnrollment.courseName">
+  <button (click)="selectedEnrollment.idEnrollment ? updateEnrollment() : createEnrollment()">
+    {{ selectedEnrollment.idEnrollment ? 'Mettre à jour' : 'Créer' }}
+  </button>
+</div>
+
+<hr>
+
+<!-- Liste des inscriptions -->
+<table border="1">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nom étudiant</th>
+      <th>Nom cours</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let enrollment of enrollments">
+      <td>{{ enrollment.idEnrollment }}</td>
+      <td>{{ enrollment.studentName }}</td>
+      <td>{{ enrollment.courseName }}</td>
+      <td>
+        <button (click)="selectEnrollment(enrollment)">Éditer</button>
+        <button (click)="deleteEnrollment(enrollment.idEnrollment!)">Supprimer</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,22 @@
+<h2>Enrollments</h2>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Student</th>
+      <th>Course</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let enrollment of enrollments">
+      <td>{{ enrollment.idEnrollment }}</td>
+      <td>{{ enrollment.studentName }}</td>
+      <td>{{ enrollment.courseName }}</td>
+      <td>
+        <button (click)="deleteEnrollment(enrollment.idEnrollment!)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
